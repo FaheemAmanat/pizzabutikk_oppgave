@@ -1,0 +1,31 @@
+CREATE DATABASE pizzabutikk_db;
+
+USE pizzabutikk_db;
+
+CREATE TABLE bruker (
+id INT AUTO_INCREMENT PRIMARY KEY,
+navn VARCHAR(100) NOT NULL,
+passord VARCHAR (255) NOT NULL, 
+opprettet TIMESTAMP DEFAULT
+
+)
+
+CREATE TABLE Pizzaer (
+id INT AUTO_INCREMENT PRIMARY KEY,
+navn VARCHAR(100) NOT NULL,
+pris DECHIMAL(6,2) NOT NULL,
+beskrivelse TEXT
+
+)
+
+
+CREATE TABLE bestillinger (
+
+id INT AUTO_INCREMENT PRIMARY KEY,
+kunde_id INT,
+dato TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+total DECIMAL(8,2),
+FOREIGN KEY (kunde_id) REFERENCES kunder(id)
+
+)
+
